@@ -1,5 +1,9 @@
 package app.LaGr77.jHashUtil;
 
+import javax.swing.SwingUtilities;
+
+import app.LaGr77.jHashUtil.view.MainFrame;
+
 /**
  * Main class: settings and run app.
  * 
@@ -11,7 +15,8 @@ public class Main
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        System.out.println( "Hello World!" );
+        //System.out.println( "Hello World!" );
+        //System.out.println( "Hello World!" );
+        SwingUtilities.invokeLater(MainFrame::new);
     }
 }
