@@ -1,11 +1,12 @@
 package app.LaGr77.jHashUtil.view;
 
 import java.awt.event.ActionListener;
-import java.net.http.WebSocket;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
+import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
+import java.awt.ComponentOrientation;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -17,8 +18,8 @@ import javax.swing.JTextField;
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.1
- * @since 2022-01-20
+ * @version 0.1.2
+ * @since 2022-01-21
  */
 public class HashPanel extends JPanel {
 
@@ -32,10 +33,10 @@ public class HashPanel extends JPanel {
 
         cbMd2 = new JCheckBox("MD2");
         cbMd5 = new JCheckBox("MD5");
-        cbSha1 = new JCheckBox("Sha 1");
-        cbSha256 = new JCheckBox("Sha 256");
-        cbSha384 = new JCheckBox("Sha 384");
-        cbSha512 = new JCheckBox("sha 512");
+        cbSha1 = new JCheckBox("SHA-1");
+        cbSha256 = new JCheckBox("SHA-256");
+        cbSha384 = new JCheckBox("SHA-384");
+        cbSha512 = new JCheckBox("SHA-512");
 
         tfPath = new JTextField();
 
@@ -44,6 +45,11 @@ public class HashPanel extends JPanel {
         btnCalculate = new JButton("Počítej");
         btnFile = new JButton("...");
         btnBack = new JButton("Zpět");
+
+        buttonsPanel = new JPanel(new FlowLayout());
+        buttonsPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        buttonsPanel.add(btnCalculate);
+        buttonsPanel.add(btnBack);
 
         setLayout(new BorderLayout());
 
@@ -72,13 +78,25 @@ public class HashPanel extends JPanel {
         panelCenter.add(cbSha256, gridBagConstraints);
 
         gridBagConstraints.gridy = 2; //third row
+        gridBagConstraints.gridx = 1 ;
         panelCenter.add(cbSha384, gridBagConstraints);
+        gridBagConstraints.gridx = GridBagConstraints.RELATIVE;
         panelCenter.add(cbSha512, gridBagConstraints);
         
-        gridBagConstraints.gridy = 3; //fourth row
+        //TODO bigger area
+        gridBagConstraints.gridy = 3; //fourth-seventh row
         panelCenter.add(lblHash, gridBagConstraints);
-        //TODO text AREA
+        gridBagConstraints.gridwidth=4;
+        gridBagConstraints.gridheight=4;
+        panelCenter.add(taHash, gridBagConstraints);
+        gridBagConstraints.gridwidth=1;
+        gridBagConstraints.gridheight=1;
 
+        gridBagConstraints.gridy = 7; //8th row
+        gridBagConstraints.gridwidth = 5;
+        panelCenter.add(buttonsPanel, gridBagConstraints);
+
+        add(panelCenter, BorderLayout.CENTER);
     }
     /****************************************************************************************************
      *                                                                                            Methods
@@ -117,5 +135,5 @@ public class HashPanel extends JPanel {
     private JButton btnFile, btnCalculate, btnBack;
     private JPanel panelCenter, buttonsPanel;
     private GridBagConstraints gridBagConstraints;
-   
+    //private Dimension TA_SIZE = new D
 }

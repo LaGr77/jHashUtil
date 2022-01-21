@@ -1,13 +1,15 @@
 package app.LaGr77.jHashUtil.controller;
 
+import java.awt.event.ActionListener;
+
 import app.LaGr77.jHashUtil.model.HashPanelModel;
 import app.LaGr77.jHashUtil.view.HashPanel;
 
 /**
  * Hash panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.0
- * @since 2022-01-19
+ * @version 0.1.1
+ * @since 2022-01-21
  */
 public class HashPanelContr implements ControllerInterface {
         
@@ -26,6 +28,14 @@ public class HashPanelContr implements ControllerInterface {
      ****************************************************************************************************/
     @Override
     public void initController() {}
+
+    /**
+     * Switch to MainPanel
+     * @param event {@link ActionListener}
+     */
+    public void btnBackAction(ActionListener event) {
+        view.btnBack(event);
+    }
 
     /****************************************************************************************************
      *                                                                                          Get & Set
