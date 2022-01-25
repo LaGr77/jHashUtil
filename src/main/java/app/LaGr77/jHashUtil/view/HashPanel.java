@@ -7,11 +7,13 @@ import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.ComponentOrientation;
+import java.awt.Dimension;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -32,15 +34,28 @@ public class HashPanel extends JPanel {
         lblHash = new JLabel("Hash");
 
         cbMd2 = new JCheckBox("MD2");
-        cbMd5 = new JCheckBox("MD5");
-        cbSha1 = new JCheckBox("SHA-1");
-        cbSha256 = new JCheckBox("SHA-256");
-        cbSha384 = new JCheckBox("SHA-384");
-        cbSha512 = new JCheckBox("SHA-512");
+        cbMd2.setPreferredSize(CK_DIMENSION);
 
+        cbMd5 = new JCheckBox("MD5");
+        cbMd5.setPreferredSize(CK_DIMENSION);
+
+        cbSha1 = new JCheckBox("SHA-1");
+        cbSha1.setPreferredSize(CK_DIMENSION);
+
+        cbSha256 = new JCheckBox("SHA-256");
+        cbSha256.setPreferredSize(CK_DIMENSION);
+
+        cbSha384 = new JCheckBox("SHA-384");
+        cbSha384.setPreferredSize(CK_DIMENSION);
+
+        cbSha512 = new JCheckBox("SHA-512");
+        cbSha512.setPreferredSize(CK_DIMENSION);
+        
         tfPath = new JTextField();
 
         taHash = new JTextArea();
+        //taHash.setMinimumSize(new Dimension(400, 200));
+        //taHash.setPreferredSize(taHash.getMinimumSize());
 
         btnCalculate = new JButton("Počítej");
         btnFile = new JButton("...");
@@ -75,12 +90,13 @@ public class HashPanel extends JPanel {
         panelCenter.add(cbMd2, gridBagConstraints);
         panelCenter.add(cbMd5, gridBagConstraints);
         panelCenter.add(cbSha1, gridBagConstraints);
-        panelCenter.add(cbSha256, gridBagConstraints);
+        
 
         gridBagConstraints.gridy = 2; //third row
         gridBagConstraints.gridx = 1 ;
-        panelCenter.add(cbSha384, gridBagConstraints);
+        panelCenter.add(cbSha256, gridBagConstraints);
         gridBagConstraints.gridx = GridBagConstraints.RELATIVE;
+        panelCenter.add(cbSha384, gridBagConstraints);
         panelCenter.add(cbSha512, gridBagConstraints);
         
         //TODO bigger area
@@ -97,6 +113,10 @@ public class HashPanel extends JPanel {
         panelCenter.add(buttonsPanel, gridBagConstraints);
 
         add(panelCenter, BorderLayout.CENTER);
+
+        jProgressBar = new JProgressBar();
+
+        add(jProgressBar, BorderLayout.SOUTH);
     }
     /****************************************************************************************************
      *                                                                                            Methods
@@ -135,5 +155,7 @@ public class HashPanel extends JPanel {
     private JButton btnFile, btnCalculate, btnBack;
     private JPanel panelCenter, buttonsPanel;
     private GridBagConstraints gridBagConstraints;
+    private JProgressBar jProgressBar;
+    private final Dimension CK_DIMENSION = new Dimension(100, 30);
     //private Dimension TA_SIZE = new D
 }
