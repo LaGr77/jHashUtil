@@ -20,8 +20,8 @@ import javax.swing.JTextField;
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.2
- * @since 2022-01-21
+ * @version 0.1.3
+ * @since 2022-01-25
  */
 public class HashPanel extends JPanel {
 
@@ -55,7 +55,7 @@ public class HashPanel extends JPanel {
 
         taHash = new JTextArea();
         //taHash.setMinimumSize(new Dimension(400, 200));
-        //taHash.setPreferredSize(taHash.getMinimumSize());
+        taHash.setPreferredSize(TA_SIZE);
 
         btnCalculate = new JButton("Počítej");
         btnFile = new JButton("...");
@@ -157,5 +157,5 @@ public class HashPanel extends JPanel {
     private GridBagConstraints gridBagConstraints;
     private JProgressBar jProgressBar;
     private final Dimension CK_DIMENSION = new Dimension(100, 30);
-    //private Dimension TA_SIZE = new D
+    private final Dimension TA_SIZE = new Dimension(300, 120);
 }
