@@ -14,6 +14,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -53,9 +55,17 @@ public class HashPanel extends JPanel {
         
         tfPath = new JTextField();
 
-        taHash = new JTextArea();
+        //taHash = new JTextArea();
         //taHash.setMinimumSize(new Dimension(400, 200));
-        taHash.setPreferredSize(TA_SIZE);
+        //taHash.setPreferredSize(TA_SIZE);
+
+        //předělat
+        String data[][]={};    
+        String column[]={"Algo","Hash"};   
+        taHash = new JTable(data, column);
+        //taHash.setPreferredSize(TA_SIZE);
+        JScrollPane sp=new JScrollPane(taHash);
+        sp.setPreferredSize(TA_SIZE);
 
         btnCalculate = new JButton("Počítej");
         btnFile = new JButton("...");
@@ -104,7 +114,7 @@ public class HashPanel extends JPanel {
         panelCenter.add(lblHash, gridBagConstraints);
         gridBagConstraints.gridwidth=4;
         gridBagConstraints.gridheight=4;
-        panelCenter.add(taHash, gridBagConstraints);
+        panelCenter.add(sp, gridBagConstraints);
         gridBagConstraints.gridwidth=1;
         gridBagConstraints.gridheight=1;
 
@@ -151,7 +161,8 @@ public class HashPanel extends JPanel {
     private JLabel lblPath, lblAlgorithm, lblHash;
     private JTextField tfPath;
     private JCheckBox cbMd2, cbMd5, cbSha1, cbSha256, cbSha384, cbSha512;
-    private JTextArea taHash;
+    //private JTextArea taHash;
+    private JTable taHash;
     private JButton btnFile, btnCalculate, btnBack;
     private JPanel panelCenter, buttonsPanel;
     private GridBagConstraints gridBagConstraints;
