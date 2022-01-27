@@ -16,14 +16,13 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.3
- * @since 2022-01-25
+ * @version 0.1.4
+ * @since 2022-01-27
  */
 public class HashPanel extends JPanel {
 
@@ -33,7 +32,6 @@ public class HashPanel extends JPanel {
     public HashPanel() {
         lblPath = new JLabel("Cesta");
         lblAlgorithm = new JLabel("Algoritmus");
-        lblHash = new JLabel("Hash");
 
         cbMd2 = new JCheckBox("MD2");
         cbMd2.setPreferredSize(CK_DIMENSION);
@@ -55,21 +53,20 @@ public class HashPanel extends JPanel {
         
         tfPath = new JTextField();
 
-        //taHash = new JTextArea();
-        //taHash.setMinimumSize(new Dimension(400, 200));
-        //taHash.setPreferredSize(TA_SIZE);
-
         //předělat
-        String data[][]={};    
-        String column[]={"Algo","Hash"};   
-        taHash = new JTable(data, column);
-        //taHash.setPreferredSize(TA_SIZE);
-        JScrollPane sp=new JScrollPane(taHash);
-        sp.setPreferredSize(TA_SIZE);
+        taHash = new JTable(new String [][] {}, new String[] {"Algo","Hash"});
+        scPane=new JScrollPane(taHash);
+        scPane.setPreferredSize(TA_SIZE);
+        taHash.getColumnModel().getColumn(0).setMinWidth(80);
+        taHash.getColumnModel().getColumn(0).setMaxWidth(80);
 
         btnCalculate = new JButton("Počítej");
+        btnCalculate.setPreferredSize(CK_DIMENSION);
+
         btnFile = new JButton("...");
+
         btnBack = new JButton("Zpět");
+        btnBack.setPreferredSize(CK_DIMENSION);
 
         buttonsPanel = new JPanel(new FlowLayout());
         buttonsPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -90,7 +87,7 @@ public class HashPanel extends JPanel {
 
         gridBagConstraints.gridy = 0; //first row
         panelCenter.add(lblPath, gridBagConstraints);
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 6;
         panelCenter.add(tfPath, gridBagConstraints);
         gridBagConstraints.gridwidth = 1;
         panelCenter.add(btnFile, gridBagConstraints);
@@ -100,26 +97,24 @@ public class HashPanel extends JPanel {
         panelCenter.add(cbMd2, gridBagConstraints);
         panelCenter.add(cbMd5, gridBagConstraints);
         panelCenter.add(cbSha1, gridBagConstraints);
-        
-
-        gridBagConstraints.gridy = 2; //third row
-        gridBagConstraints.gridx = 1 ;
         panelCenter.add(cbSha256, gridBagConstraints);
-        gridBagConstraints.gridx = GridBagConstraints.RELATIVE;
         panelCenter.add(cbSha384, gridBagConstraints);
         panelCenter.add(cbSha512, gridBagConstraints);
-        
+
+//        gridBagConstraints.gridy = 2; //third row
+//        gridBagConstraints.gridx = 1 ;
+//        gridBagConstraints.gridx = GridBagConstraints.RELATIVE;
+                
         //TODO bigger area
         gridBagConstraints.gridy = 3; //fourth-seventh row
-        panelCenter.add(lblHash, gridBagConstraints);
-        gridBagConstraints.gridwidth=4;
+        gridBagConstraints.gridwidth=8;
         gridBagConstraints.gridheight=4;
-        panelCenter.add(sp, gridBagConstraints);
+        panelCenter.add(scPane, gridBagConstraints);
         gridBagConstraints.gridwidth=1;
         gridBagConstraints.gridheight=1;
 
-        gridBagConstraints.gridy = 7; //8th row
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridy = 8; //8th row
+        gridBagConstraints.gridwidth = 7;
         panelCenter.add(buttonsPanel, gridBagConstraints);
 
         add(panelCenter, BorderLayout.CENTER);
@@ -155,18 +150,35 @@ public class HashPanel extends JPanel {
         btnFile.addActionListener(event);
     }
 
+    /**
+     * Return text from tfPath fields
+     * @return {@link String} - Trimmed
+     */
+    public String getPathText() {
+        return tfPath.getText().trim();
+    }
+    
+    /**
+     * Set text to tfPath fiels
+     * @param path {@link String} - Trimmed
+     */
+    public void setPathText(String path) {
+        tfPath.setText(path.trim());
+    }
+
     /****************************************************************************************************
      *                                                                                          Variables
      ****************************************************************************************************/
-    private JLabel lblPath, lblAlgorithm, lblHash;
+    private JLabel lblPath, lblAlgorithm;
     private JTextField tfPath;
     private JCheckBox cbMd2, cbMd5, cbSha1, cbSha256, cbSha384, cbSha512;
     //private JTextArea taHash;
     private JTable taHash;
+    private JScrollPane scPane;
     private JButton btnFile, btnCalculate, btnBack;
     private JPanel panelCenter, buttonsPanel;
     private GridBagConstraints gridBagConstraints;
     private JProgressBar jProgressBar;
-    private final Dimension CK_DIMENSION = new Dimension(100, 30);
+    private final Dimension CK_DIMENSION = new Dimension(90, 30);
     private final Dimension TA_SIZE = new Dimension(300, 120);
 }

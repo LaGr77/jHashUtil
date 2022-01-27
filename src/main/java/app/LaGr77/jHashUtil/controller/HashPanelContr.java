@@ -2,14 +2,16 @@ package app.LaGr77.jHashUtil.controller;
 
 import java.awt.event.ActionListener;
 
+import javax.swing.JFileChooser;
+
 import app.LaGr77.jHashUtil.model.HashPanelModel;
 import app.LaGr77.jHashUtil.view.HashPanel;
 
 /**
  * Hash panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.1
- * @since 2022-01-21
+ * @version 0.1.2
+ * @since 2022-01-27
  */
 public class HashPanelContr implements ControllerInterface {
         
@@ -27,7 +29,16 @@ public class HashPanelContr implements ControllerInterface {
      *                                                                                            Methods
      ****************************************************************************************************/
     @Override
-    public void initController() {}
+    public void initController() {
+        initView();
+    }
+
+    /**
+     * Init Panel
+     */
+    private void initView() {
+        btnFileAction();
+    }
 
     /**
      * Switch to MainPanel
@@ -36,6 +47,20 @@ public class HashPanelContr implements ControllerInterface {
     public void btnBackAction(ActionListener event) {
         view.btnBack(event);
     }
+
+    /**
+     * JButton FindPath action
+     */
+    private void btnFileAction() {
+        view.btnFileAction(event -> {
+            JFileChooser fc = new JFileChooser();
+            fc.setCurrentDirectory(new java.io.File("."));
+            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            int returnVal = fc.showSaveDialog(null);
+            if(returnVal == JFileChooser.APPROVE_OPTION) {
+                view.setPathText(fc.getSelectedFile().toPath().toString());
+            }
+    });}
 
     /****************************************************************************************************
      *                                                                                          Get & Set
