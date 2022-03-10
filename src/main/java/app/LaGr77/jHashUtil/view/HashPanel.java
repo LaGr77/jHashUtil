@@ -21,8 +21,8 @@ import javax.swing.JTextField;
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.4
- * @since 2022-01-27
+ * @version 0.1.5
+ * @since 2022-02-02
  */
 public class HashPanel extends JPanel {
 
@@ -150,6 +150,9 @@ public class HashPanel extends JPanel {
         btnFile.addActionListener(event);
     }
 
+    /****************************************************************************************************
+     *                                                                                          Get & Set
+     ****************************************************************************************************/
     /**
      * Return text from tfPath fields
      * @return {@link String} - Trimmed

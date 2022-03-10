@@ -58,7 +58,7 @@ public class HashPanelContr implements ControllerInterface {
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             int returnVal = fc.showSaveDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
-                view.setPathText(fc.getSelectedFile().toPath().toString());
+                view.setPathText(fc.getSelectedFile().getAbsolutePath());
             }
     });}
 

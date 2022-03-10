@@ -1,0 +1,3 @@
+https://cppcodetips.wordpress.com/2014/03/25/swing-worker-thread-explained-with-progress-bar/
+
+https://www.generacodice.com/en/articolo/141843/How-do-I-use-JProgressBar-to-display-file-copy-progress
