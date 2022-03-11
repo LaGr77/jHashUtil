@@ -10,7 +10,7 @@ import app.LaGr77.jHashUtil.view.HashPanel;
 /**
  * Hash panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.2
+ * @version 0.1.2.2022-01-27
  * @since 2022-01-27
  */
 public class HashPanelContr implements ControllerInterface {

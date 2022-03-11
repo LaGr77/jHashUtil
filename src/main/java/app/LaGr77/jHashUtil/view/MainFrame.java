@@ -14,7 +14,7 @@ import app.LaGr77.jHashUtil.model.MainPanelModel;
 /**
  * Main Frame
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.1
+ * @version 0.1.1.2022-01-21
  * @since 2022-01-21
  */
 public class MainFrame extends JFrame{

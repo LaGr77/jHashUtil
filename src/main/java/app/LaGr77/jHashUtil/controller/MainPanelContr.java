@@ -8,7 +8,7 @@ import app.LaGr77.jHashUtil.view.MainPanel;
 /**
  * Main panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.0
+ * @version 0.1.0.2022-01-17
  * @since 2022-01-17
  */
 public class MainPanelContr implements ControllerInterface{

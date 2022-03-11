@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.5
+ * @version 0.1.5.2022-02-02
  * @since 2022-02-02
  */
 public class HashPanel extends JPanel {
@@ -41,6 +41,9 @@ public class HashPanel extends JPanel {
 
         cbSha1 = new JCheckBox("SHA-1");
         cbSha1.setPreferredSize(CK_DIMENSION);
+
+        cbSha224 = new JCheckBox("SHA-224");
+        cbSha224.setPreferredSize(CK_DIMENSION);
 
         cbSha256 = new JCheckBox("SHA-256");
         cbSha256.setPreferredSize(CK_DIMENSION);
@@ -97,6 +100,7 @@ public class HashPanel extends JPanel {
         panelCenter.add(cbMd2, gridBagConstraints);
         panelCenter.add(cbMd5, gridBagConstraints);
         panelCenter.add(cbSha1, gridBagConstraints);
+        panelCenter.add(cbSha224, gridBagConstraints);
         panelCenter.add(cbSha256, gridBagConstraints);
         panelCenter.add(cbSha384, gridBagConstraints);
         panelCenter.add(cbSha512, gridBagConstraints);
@@ -174,7 +178,7 @@ public class HashPanel extends JPanel {
      ****************************************************************************************************/
     private JLabel lblPath, lblAlgorithm;
     private JTextField tfPath;
-    private JCheckBox cbMd2, cbMd5, cbSha1, cbSha256, cbSha384, cbSha512;
+    private JCheckBox cbMd2, cbMd5, cbSha1, cbSha224, cbSha256, cbSha384, cbSha512;
     //private JTextArea taHash;
     private JTable taHash;
     private JScrollPane scPane;
@@ -183,5 +187,5 @@ public class HashPanel extends JPanel {
     private GridBagConstraints gridBagConstraints;
     private JProgressBar jProgressBar;
     private final Dimension CK_DIMENSION = new Dimension(90, 30);
-    private final Dimension TA_SIZE = new Dimension(300, 120);
+    private final Dimension TA_SIZE = new Dimension(300, 400);
 }
