@@ -10,19 +10,15 @@ import app.LaGr77.jHashUtil.view.HashPanel;
 /**
  * Hash panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.2.2022-01-27
+ * @version 0.1.3.2022-04-08
  * @since 2022-01-27
  */
 public class HashPanelContr implements ControllerInterface {
         
-    /**
-     * Constructor
-     * @param model
-     * @param view
-     */
-    public HashPanelContr(HashPanelModel model, HashPanel view) {
-        setModel(model);
-        setView(view);
+    /** Constructor */
+    public HashPanelContr() {
+        setModel(new HashPanelModel());
+        setView(new HashPanel(this.getModel())); 
     }
 
     /****************************************************************************************************
@@ -65,12 +61,20 @@ public class HashPanelContr implements ControllerInterface {
     /****************************************************************************************************
      *                                                                                          Get & Set
      ****************************************************************************************************/
-        /**
+    /**
      * Set model
      * @param model {@link HashPanelModel}
      */
     private void setModel(HashPanelModel model) {
         this.model = model;
+    }
+
+    /**
+     * Return model
+     * @return {@link HashPanelModel}
+     */
+    private HashPanelModel getModel() {
+        return this.model;
     }
 
     /**

@@ -18,6 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+import app.LaGr77.jHashUtil.model.HashPanelModel;
+
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
@@ -29,7 +31,7 @@ public class HashPanel extends JPanel {
     /**
      * Constructor
      */
-    public HashPanel() {
+    public HashPanel(HashPanelModel hpm) {
         lblPath = new JLabel("Cesta");
         lblAlgorithm = new JLabel("Algoritmus");
 
@@ -57,7 +59,8 @@ public class HashPanel extends JPanel {
         tfPath = new JTextField();
 
         //předělat
-        taHash = new JTable(new String [][] {}, new String[] {"Algo","Hash"});
+        //taHash = new JTable(new String [][] {}, new String[] {"Algo","Hash"});
+        taHash = new JTable(hpm);
         scPane=new JScrollPane(taHash);
         scPane.setPreferredSize(TA_SIZE);
         taHash.getColumnModel().getColumn(0).setMinWidth(80);

@@ -8,19 +8,15 @@ import app.LaGr77.jHashUtil.view.MainPanel;
 /**
  * Main panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.0.2022-01-17
+ * @version 0.1.1.2022-04-08
  * @since 2022-01-17
  */
 public class MainPanelContr implements ControllerInterface{
 
-   /**
-     * Constructor
-     * @param model {@link MainPanelModel} 
-     * @param view {@link MainMenuView}
-      */
-      public MainPanelContr(MainPanelModel model, MainPanel view) {
-        setModel(model);
-        setView(view);
+   /** Constructor */
+    public MainPanelContr() {
+        setModel(new MainPanelModel());
+        setView(new MainPanel());
     }
     
     /****************************************************************************************************
