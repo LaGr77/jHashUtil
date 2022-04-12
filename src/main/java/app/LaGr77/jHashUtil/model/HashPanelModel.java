@@ -12,10 +12,7 @@ public class HashPanelModel extends DefaultTableModel   {
     
     /** Constructor */
     public HashPanelModel () {
-        //this.setColumnCount(3);
-        this.addColumn("Soubor");
-        this.addColumn("Algorithm");
-        this.addColumn("Hash");
+        this.setColumnIdentifiers(new Object[] { "Soubor", "Algorithm", "Hash" });
       }
         
     /****************************************************************************************************
@@ -41,8 +38,6 @@ public class HashPanelModel extends DefaultTableModel   {
     public boolean isCellEditable(int row, int column) {
         return false;
     }
-    
-
 
     /****************************************************************************************************
      *                                                                                          Variables

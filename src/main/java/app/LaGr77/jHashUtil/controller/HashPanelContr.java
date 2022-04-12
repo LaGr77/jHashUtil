@@ -10,7 +10,7 @@ import app.LaGr77.jHashUtil.view.HashPanel;
 /**
  * Hash panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.3.2022-04-08
+ * @version 0.1.4.2022-04-12
  * @since 2022-01-27
  */
 public class HashPanelContr implements ControllerInterface {
@@ -19,6 +19,8 @@ public class HashPanelContr implements ControllerInterface {
     public HashPanelContr() {
         setModel(new HashPanelModel());
         setView(new HashPanel(this.getModel())); 
+
+        //getModel().addRow(new Object[] {new String("Test"), new String("MD5"), new String("12345678901234567890")});
     }
 
     /****************************************************************************************************
