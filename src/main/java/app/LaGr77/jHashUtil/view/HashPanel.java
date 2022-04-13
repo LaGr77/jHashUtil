@@ -23,7 +23,7 @@ import app.LaGr77.jHashUtil.model.HashPanelModel;
 /**
  * Main panel
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.6.2022-04-12
+ * @version 0.1.6.2022-04-13
  * @since 2022-02-02
  */
 public class HashPanel extends JPanel {
@@ -67,7 +67,7 @@ public class HashPanel extends JPanel {
         taHash.getColumnModel().getColumn(0).setMaxWidth(80);
         taHash.getColumnModel().getColumn(1).setMinWidth(80);
         taHash.getColumnModel().getColumn(1).setMaxWidth(80);
-
+  
         btnCalculate = new JButton("Počítej");
         btnCalculate.setPreferredSize(CK_DIMENSION);
 
@@ -139,7 +139,7 @@ public class HashPanel extends JPanel {
      * Switch to MainPanel
      * @param event {@link ActionListener}
      */
-    public void btnBack(ActionListener event) {
+    public void btnBackAction(ActionListener event) {
         btnBack.addActionListener(event);
     }
 

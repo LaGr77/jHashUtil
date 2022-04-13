@@ -10,7 +10,7 @@ import app.LaGr77.jHashUtil.view.HashPanel;
 /**
  * Hash panel controller
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.4.2022-04-12
+ * @version 0.1.4.2022-04-13
  * @since 2022-01-27
  */
 public class HashPanelContr implements ControllerInterface {
@@ -19,8 +19,6 @@ public class HashPanelContr implements ControllerInterface {
     public HashPanelContr() {
         setModel(new HashPanelModel());
         setView(new HashPanel(this.getModel())); 
-
-        //getModel().addRow(new Object[] {new String("Test"), new String("MD5"), new String("12345678901234567890")});
     }
 
     /****************************************************************************************************
@@ -36,6 +34,7 @@ public class HashPanelContr implements ControllerInterface {
      */
     private void initView() {
         btnFileAction();
+        btnCalculateAction();
     }
 
     /**
@@ -43,7 +42,13 @@ public class HashPanelContr implements ControllerInterface {
      * @param event {@link ActionListener}
      */
     public void btnBackAction(ActionListener event) {
-        view.btnBack(event);
+        view.btnBackAction(event);
+    }
+
+    public void btnCalculateAction() {
+        view.btnCalculateAction(event -> {
+            getModel().addRow(new Object[] { "Test", "MD5", "12345678901234567890" });
+        });
     }
 
     /**
@@ -56,7 +61,7 @@ public class HashPanelContr implements ControllerInterface {
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             int returnVal = fc.showSaveDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
-                view.setPathText(fc.getSelectedFile().getAbsolutePath());
+                getView().setPathText(fc.getSelectedFile().getAbsolutePath());
             }
     });}
 

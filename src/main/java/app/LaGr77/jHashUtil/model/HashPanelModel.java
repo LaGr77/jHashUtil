@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * HAsh panel model
  * @author Ladislav Grulich (LaGr77) <a href="mailto:aaa.bbb@gmail.com">[aaa.bbb@gmail.com]</a>
- * @version 0.1.2.2022-04-08
+ * @version 0.1.2.2022-04-13
  * @since 2022-01-18
  */
 public class HashPanelModel extends DefaultTableModel   {
@@ -13,17 +13,17 @@ public class HashPanelModel extends DefaultTableModel   {
     /** Constructor */
     public HashPanelModel () {
         this.setColumnIdentifiers(new Object[] { "Soubor", "Algorithm", "Hash" });
-      }
+    }
         
     /****************************************************************************************************
      *                                                                                            Methods
      ****************************************************************************************************/
     /**
      * Inser new row
-     * @param data {@link Object} []
+     * @param row {@link Object} []
      */    
-    public void addRow(Object [] data) {
-        this.addRow(data);
+    public void addRow(Object[] row) {
+        this.insertRow(this.getRowCount(), row);
     }
 
     /**
