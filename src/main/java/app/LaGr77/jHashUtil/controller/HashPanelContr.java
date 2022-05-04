@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFileChooser;
 
 import app.LaGr77.jHashUtil.model.HashPanelModel;
+import app.LaGr77.jHashUtil.util.Algo;
 import app.LaGr77.jHashUtil.view.HashPanel;
 
 /**
@@ -48,6 +49,7 @@ public class HashPanelContr implements ControllerInterface {
     public void btnCalculateAction() {
         view.btnCalculateAction(event -> {
             getModel().addRow(new Object[] { "Test", "MD5", "12345678901234567890" });
+            Algo[] array = view.getAlgo();
         });
     }
 

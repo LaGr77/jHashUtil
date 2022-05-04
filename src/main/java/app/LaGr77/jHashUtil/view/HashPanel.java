@@ -1,6 +1,8 @@
 package app.LaGr77.jHashUtil.view;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Vector;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.FlowLayout;
@@ -19,6 +21,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import app.LaGr77.jHashUtil.model.HashPanelModel;
+import app.LaGr77.jHashUtil.util.Algo;
 
 /**
  * Main panel
@@ -176,6 +179,16 @@ public class HashPanel extends JPanel {
      */
     public void setPathText(String path) {
         tfPath.setText(path.trim());
+    }
+
+    public Algo[] getAlgo() {
+        ArrayList<Algo> al = new ArrayList<Algo>();;
+        if (cbMd2.isSelected()) {al.add(Algo.MD2);}        
+        if (cbMd5.isSelected()) {al.add(Algo.MD5);}
+        
+        if (al.size() == 0) {al.add(Algo.MD5);}
+
+        return (Algo[]) al.toArray();
     }
 
     /****************************************************************************************************

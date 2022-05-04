@@ -1,14 +1,10 @@
 package app.LaGr77.jHashUtil;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 import javax.swing.SwingUtilities;
 
-import app.LaGr77.jHashUtil.util.Algo;
-import app.LaGr77.jHashUtil.util.FileHash;
 import app.LaGr77.jHashUtil.view.MainFrame;
 
 /**
@@ -22,7 +18,7 @@ public class Main
 {
     public static void main( String[] args ) throws NoSuchAlgorithmException, IOException
     {
-        //System.out.println( "Hello World!" );
+        System.out.println("Hello World!" );
         //System.out.println( "Hello World!" );
         SwingUtilities.invokeLater(MainFrame::new);
 
