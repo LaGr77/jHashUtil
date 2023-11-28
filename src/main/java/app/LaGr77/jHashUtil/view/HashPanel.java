@@ -2,7 +2,6 @@ package app.LaGr77.jHashUtil.view;
 
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Vector;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.FlowLayout;

@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 
 import app.LaGr77.jHashUtil.controller.HashPanelContr;
 import app.LaGr77.jHashUtil.controller.MainPanelContr;
-import app.LaGr77.jHashUtil.model.MainPanelModel;
 
 
 /**
