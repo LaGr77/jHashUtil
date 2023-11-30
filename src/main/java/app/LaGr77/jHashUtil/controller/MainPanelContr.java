@@ -19,9 +19,7 @@ public class MainPanelContr implements ControllerInterface{
         setView(new MainPanel());
     }
     
-    /****************************************************************************************************
-     *                                                                                            Methods
-     ****************************************************************************************************/
+    /** Methods */
     @Override
     public void initController() {}
 
@@ -56,9 +54,7 @@ public class MainPanelContr implements ControllerInterface{
         view.btnSettingsAction(event);
     }
 
-    /****************************************************************************************************
-     *                                                                                          Get & Set
-     ****************************************************************************************************/
+    /** Get & Set */
     /**
      * Set model
      * @param model {@link MainPanelModel}
@@ -83,9 +79,7 @@ public class MainPanelContr implements ControllerInterface{
         this.view = view;
     }
 
-    /****************************************************************************************************
-     *                                                                                          Variables
-     ****************************************************************************************************/
+    /** Variables */
     private MainPanelModel model;
     private MainPanel view;    
 }

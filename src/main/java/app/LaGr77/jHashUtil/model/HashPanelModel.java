@@ -15,9 +15,7 @@ public class HashPanelModel extends DefaultTableModel   {
         this.setColumnIdentifiers(new Object[] { "Soubor", "Algorithm", "Hash" });
     }
         
-    /****************************************************************************************************
-     *                                                                                            Methods
-     ****************************************************************************************************/
+    /** Methods */
     /**
      * Inser new row
      * @param row {@link Object} []
@@ -39,9 +37,7 @@ public class HashPanelModel extends DefaultTableModel   {
         return false;
     }
 
-    /****************************************************************************************************
-     *                                                                                          Variables
-     ****************************************************************************************************/
+    /** Variables */
     private final Class[] columnClasses = new Class[] { String.class, String.class, String.class};
 
 }

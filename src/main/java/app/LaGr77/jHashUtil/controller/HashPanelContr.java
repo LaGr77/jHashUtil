@@ -22,9 +22,7 @@ public class HashPanelContr implements ControllerInterface {
         setView(new HashPanel(this.getModel())); 
     }
 
-    /****************************************************************************************************
-     *                                                                                            Methods
-     ****************************************************************************************************/
+    /** Methods */
     @Override
     public void initController() {
         initView();
@@ -67,9 +65,7 @@ public class HashPanelContr implements ControllerInterface {
             }
     });}
 
-    /****************************************************************************************************
-     *                                                                                          Get & Set
-     ****************************************************************************************************/
+    /** Get & Set */
     /**
      * Set model
      * @param model {@link HashPanelModel}
@@ -103,9 +99,7 @@ public class HashPanelContr implements ControllerInterface {
     }
 
 
-    /****************************************************************************************************
-     *                                                                                          Variables
-     ****************************************************************************************************/
+    /** Variables */
     private HashPanelModel model;
     private HashPanel view;  
 }
